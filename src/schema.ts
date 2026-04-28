@@ -47,22 +47,18 @@ export const supplierFieldSchema = z.object({
   label: localisedString,
   description: localisedString,
   /**
-   * Primary citation. Use a stable form:
+   * Primary citation, stable form:
    *   "NIS2 Art. 21(2)(j)"
    *   "CIR 2024/2690 §5.1.4(d)"
    *   "ENISA TIG §5.1.2"
-   *   "BSI IT-Grundschutz ORP.4.A23"
    *   "GDPR Art. 28"
+   *
+   * Anchored to EU-level instruments only — the directive, the
+   * implementing regulation, and ENISA's technical guidance. National
+   * derivatives (BSI IT-Grundschutz, ANSSI, CCB CyFun, etc.) are
+   * downstream and live in their own extension repos.
    */
   legalBasis: z.string().min(1),
-  /**
-   * BSI Grundschutz Bausteine from the BSI NIS-2 Lieferketten-Checkliste
-   * (v1.0, 5 June 2025) that this field helps satisfy. Stable IDs at the
-   * A-number precision: "BES.4.A5", "DLS.2.A1.1", "ASST.4.A1", etc.
-   * Optional and additive — fields without supplier-specific Baustein
-   * coverage simply omit this array.
-   */
-  bsiBausteine: z.array(z.string().regex(/^[A-Z]+(\.[0-9A-Z]+)+$/)).optional(),
   required: z.boolean(),
   visibleWhen: z
     .object({

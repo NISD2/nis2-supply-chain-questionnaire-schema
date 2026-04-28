@@ -121,13 +121,6 @@
                 "type": "string",
                 "minLength": 1
               },
-              "bsiBausteine": {
-                "type": "array",
-                "items": {
-                  "type": "string",
-                  "pattern": "^[A-Z]+(\\.[0-9A-Z]+)+$"
-                }
-              },
               "required": {
                 "type": "boolean"
               },

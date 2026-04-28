@@ -1,6 +1,6 @@
 import { describe, expect, test } from "bun:test";
 import { supplierQuestionnaire, groupBySection, visibleFields } from "../src/data";
-import { FIELD_TYPE, supplierQuestionnaireSchema } from "../src/schema";
+import { FIELD_TYPE } from "../src/schema";
 
 // These tests guard invariants that the Zod schema cannot express:
 // uniqueness, cross-references, conditional shape, semantic content,
@@ -72,29 +72,21 @@ describe("cross-references", () => {
   });
 });
 
-describe("BSI alignment", () => {
-  test("supplier-specific Baustein families (BES, DLS, ASST, DEV) all appear at least once", () => {
-    const all = supplierQuestionnaire.fields.flatMap((f) => f.bsiBausteine ?? []);
-    const prefixes = new Set(all.map((b) => b.split(".")[0]));
-    for (const required of ["BES", "DLS", "ASST", "DEV"]) {
-      expect(prefixes.has(required)).toBe(true);
+describe("citations", () => {
+  test("every field cites an EU-level instrument (NIS2, CIR, ENISA, GDPR, CRA)", () => {
+    const allowed = ["NIS2", "CIR", "ENISA", "GDPR", "CRA"];
+    for (const field of supplierQuestionnaire.fields) {
+      const matched = allowed.some((p) => field.legalBasis.startsWith(p));
+      expect(matched).toBe(true);
     }
   });
 
-  test("Baustein regex rejects malformed IDs (regression)", () => {
-    // The earlier /^[A-Z]+\.[0-9A-Z][0-9A-Z.]*$/ accepted trailing dots
-    // like "BES.A1." Anchor-the-tail requires every dot to be followed by
-    // another segment.
-    const fieldShape = supplierQuestionnaire.fields[0];
-    if (!fieldShape) throw new Error("no fields to derive shape from");
-    const garbage = ["BES.A1.", "BES..A1", ".BES.A1", "BES", "bes.a1"];
-    for (const id of garbage) {
-      const result = supplierQuestionnaireSchema.safeParse({
-        version: supplierQuestionnaire.version,
-        lastUpdated: supplierQuestionnaire.lastUpdated,
-        fields: [{ ...fieldShape, bsiBausteine: [id] }],
-      });
-      expect(result.success).toBe(false);
+  test("no field cites a national-derivative instrument (BSI, ANSSI, CCB)", () => {
+    const banned = ["BSI", "IT-Grundschutz", "ANSSI", "CCB", "CyFun"];
+    for (const field of supplierQuestionnaire.fields) {
+      for (const term of banned) {
+        expect(field.legalBasis).not.toContain(term);
+      }
     }
   });
 });

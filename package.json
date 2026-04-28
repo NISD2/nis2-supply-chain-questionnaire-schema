@@ -1,7 +1,7 @@
 {
   "name": "@nisd2/nis2-supply-chain-questionnaire",
-  "version": "1.4.2",
-  "description": "Open data format for the NIS2 supply-chain questionnaire — typed Zod schema as source of truth, JSON + JSON Schema as published artefacts. The questions a NIS2-regulated entity asks its suppliers, anchored to NIS2 Art. 21(2)(d), CIR 2024/2690, ENISA TIG, and BSI IT-Grundschutz.",
+  "version": "2.0.0",
+  "description": "Open EU data format for the NIS2 supply-chain questionnaire — typed Zod schema as source of truth, JSON + JSON Schema as published artefacts. The questions a NIS2-regulated entity asks its suppliers, anchored to NIS2 Art. 21(2)(d), CIR 2024/2690, ENISA TIG, GDPR, and the Cyber Resilience Act.",
   "license": "SEE LICENSE IN LICENSE",
   "homepage": "https://github.com/NISD2/nis2-supply-chain-questionnaire",
   "repository": {
@@ -59,7 +59,6 @@
     "typecheck:examples": "tsc --noEmit -p tsconfig.examples.json",
     "test": "bun test",
     "build:json": "bun scripts/build-json.ts",
-    "generate:bsi-mapping": "python3 scripts/generate-bsi-mapping.py",
     "validate": "bun src/data.ts && echo 'OK: TS source validates against schema'",
     "check:json-in-sync": "bun scripts/build-json.ts && git diff --exit-code data/supply-chain-questionnaire.json schema/supply-chain-questionnaire.schema.json"
   },

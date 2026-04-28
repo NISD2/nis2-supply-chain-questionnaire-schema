@@ -6,7 +6,6 @@
 
 - [ ] Wording / typo fix (patch)
 - [ ] Citation correction (patch)
-- [ ] BSI Baustein addition or correction (patch)
 - [ ] New field (minor)
 - [ ] Schema change (major)
 - [ ] Tooling / CI / docs
@@ -15,7 +14,6 @@
 
 - [ ] Edited the TS source in `src/fields/`, not the JSON
 - [ ] Ran `bun run build:json` to regenerate `data/supply-chain-questionnaire.json`
-- [ ] Ran `bun run generate:bsi-mapping` if `bsiBausteine` changed
 - [ ] `bun test` passes
 - [ ] `bun run typecheck` passes
 - [ ] `bun run check:json-in-sync` passes
@@ -25,5 +23,6 @@
 
 ## Primary-source citation
 
-<!-- Required for any change to legalBasis or bsiBausteine. -->
-<!-- Provide a stable URL to the regulation, BSI document, or ENISA publication. -->
+<!-- Required for any change to legalBasis. -->
+<!-- Provide a stable URL to the EU instrument (NIS2, CIR 2024/2690, ENISA TIG, GDPR, CRA). -->
+<!-- National-derivative citations (BSI, ANSSI, CCB, etc.) are deliberately out of scope. -->

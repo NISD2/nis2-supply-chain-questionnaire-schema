@@ -5,9 +5,8 @@ Thanks for taking the time. This repo is small and opinionated. Read this once b
 ## What we accept
 
 - **Corrections to `legalBasis`** — if you read a directive article differently, open a PR with the primary-source citation. Press articles, blog posts, and consultancy whitepapers are not enough on their own.
-- **Additions to `bsiBausteine`** — if a field plausibly satisfies a Baustein from the BSI NIS-2 Lieferketten-Checkliste that we missed, open a PR. Cite the Baustein ID at the A-number precision (e.g. `BES.4.A5`, not `BES.4`).
 - **Localised string fixes** — typos, awkward German phrasing, terminology corrections. Native-speaker review preferred.
-- **New fields** that map to a BSI Baustein, a CIR article, or an ENISA TIG section we don't currently cover. Open an issue first so we can discuss whether the field belongs in the questionnaire or at the contract level.
+- **New fields** that map to a NIS2 article, a CIR section, an ENISA TIG section, or another EU instrument we don't currently cover. Open an issue first so we can discuss whether the field belongs in the questionnaire or at the contract level.
 - **New translations** (FR, IT, ES, NL, PL, ...) — but only if you can commit to keeping them in sync. A stale translation is worse than no translation. The current locale schema is `{ en, de }`; extending it is a 2.0.0 breaking change.
 
 ## What we don't accept
@@ -39,10 +38,7 @@ $EDITOR src/fields/security-practices.ts
 # 2. Regenerate the JSON artefact
 bun run build:json
 
-# 3. Regenerate the BSI inverse mapping (if you changed bsiBausteine)
-bun run generate:bsi-mapping
-
-# 4. Verify everything is consistent
+# 3. Verify everything is consistent
 bun run typecheck
 bun run validate
 bun test
@@ -56,8 +52,7 @@ Before requesting review:
 - [ ] Typecheck passes (`bun run typecheck`)
 - [ ] Schema validates (`bun run validate`)
 - [ ] JSON artefact is in sync (`bun run check:json-in-sync`)
-- [ ] If you changed `bsiBausteine`, the inverse mapping is regenerated (`bun run generate:bsi-mapping`)
-- [ ] Every new `legalBasis` cites a primary source (with a stable URL if possible)
+- [ ] Every new `legalBasis` cites an EU-level primary source (NIS2, CIR 2024/2690, ENISA TIG, GDPR, CRA) — no national-derivative citations
 - [ ] Every new field has both `en` and `de` for `label` and `description`
 - [ ] Bumped `VERSION` in `src/data.ts` if shipping (semver: minor for added fields, patch for wording, major for breaking changes)
 
@@ -79,14 +74,14 @@ gh release create vX.Y.Z --title "vX.Y.Z — <summary>" --notes "<changelog exce
 
 ## Reporting a regulatory change
 
-If BSI updates the Lieferketten-Checkliste, ENISA publishes a new TIG version, or CIR 2024/2690 is amended, open an issue with:
+If ENISA publishes a new TIG version, the NIS2 Directive is amended, or CIR 2024/2690 is updated, open an issue with:
 
-- The publishing source (BSI page, ENISA URL, EUR-Lex link)
+- The publishing source (ENISA URL, EUR-Lex link)
 - The published date
-- A short summary of what changed and which fields/Bausteine are affected
+- A short summary of what changed and which fields are affected
 
 We update on a best-effort schedule, faster if customers depend on the change.
 
 ## Not legal advice
 
-This repository is structured guidance based on our reading of NIS2, CIR 2024/2690, ENISA TIG, and BSI IT-Grundschutz. It does not constitute legal advice. If you need that, hire counsel.
+This repository is structured guidance based on our reading of the NIS2 Directive, CIR 2024/2690, and ENISA Technical Implementation Guidance. It does not constitute legal advice. If you need that, hire counsel.

@@ -1,5 +1,5 @@
 {
-  "version": "1.4.2",
+  "version": "2.0.0",
   "lastUpdated": "2026-04-28",
   "fields": [
     {
@@ -14,10 +14,7 @@
         "en": "Required by CIR 2024/2690 §5.2(a) — supplier register entry.",
         "de": "Erforderlich nach CIR 2024/2690 §5.2(a) — Lieferantenregister-Eintrag."
       },
-      "legalBasis": "CIR 2024/2690 §5.2(a)",
-      "bsiBausteine": [
-        "BES.1.A2"
-      ],
+      "legalBasis": "ENISA TIG §5.2",
       "required": true
     },
     {
@@ -32,10 +29,7 @@
         "en": "Required by CIR 2024/2690 §5.2(a) — supplier register entry.",
         "de": "Erforderlich nach CIR 2024/2690 §5.2(a) — Lieferantenregister-Eintrag."
       },
-      "legalBasis": "CIR 2024/2690 §5.2(a)",
-      "bsiBausteine": [
-        "BES.1.A2"
-      ],
+      "legalBasis": "ENISA TIG §5.2",
       "required": true
     },
     {
@@ -50,11 +44,7 @@
         "en": "ISO 3166-1 alpha-2 code, e.g. DE, FR, IT.",
         "de": "ISO 3166-1 Alpha-2-Code, z. B. DE, FR, IT."
       },
-      "legalBasis": "CIR 2024/2690 §5.2(a)",
-      "bsiBausteine": [
-        "BES.1.A2",
-        "BES.2.A2"
-      ],
+      "legalBasis": "ENISA TIG §5.2",
       "required": true
     },
     {
@@ -70,9 +60,6 @@
         "de": "Die primäre öffentliche Domain des Lieferanten."
       },
       "legalBasis": "ENISA TIG §5.2(b)",
-      "bsiBausteine": [
-        "BES.1.A2"
-      ],
       "required": false
     },
     {
@@ -88,9 +75,6 @@
         "de": "Kurze Beschreibung für Kunden."
       },
       "legalBasis": "ENISA TIG §5.2(b)",
-      "bsiBausteine": [
-        "BES.1.A2"
-      ],
       "required": false
     },
     {
@@ -106,9 +90,6 @@
         "de": "Längere Beschreibung des Lieferanten."
       },
       "legalBasis": "ENISA TIG §5.2(b)",
-      "bsiBausteine": [
-        "BES.3.A2"
-      ],
       "required": false
     },
     {
@@ -124,10 +105,6 @@
         "de": "Erforderlich nach ENISA TIG §5.2(b) + §5.1.4 TIPS — klare und vollständige Beschreibung der angebotenen IKT-Produkte und -Dienstleistungen. Ein Absatz."
       },
       "legalBasis": "ENISA TIG §5.2(b) + §5.1.4 TIPS",
-      "bsiBausteine": [
-        "BES.2.A1",
-        "BES.3.A2"
-      ],
       "required": true
     },
     {
@@ -143,10 +120,6 @@
         "de": "Erforderlich nach ENISA TIG §5.1.4 TIPS — alle Länder / Regionen auflisten, in denen Kundendaten erstellt, verarbeitet oder gespeichert werden. Komma-getrennt."
       },
       "legalBasis": "ENISA TIG §5.1.4 TIPS",
-      "bsiBausteine": [
-        "BES.2.A2",
-        "DLS.6.A1"
-      ],
       "required": true
     },
     {
@@ -162,9 +135,6 @@
         "de": "Erforderlich nach CIR 2024/2690 §5.1.4(d) — Meldekette für Sicherheitsvorfälle."
       },
       "legalBasis": "CIR 2024/2690 §5.1.4(d)",
-      "bsiBausteine": [
-        "BES.5.A15.1"
-      ],
       "required": true
     },
     {
@@ -180,9 +150,6 @@
         "de": "Standard-E-Mail für Vorfallsmeldungen durch Kunden."
       },
       "legalBasis": "CIR 2024/2690 §5.1.4(d)",
-      "bsiBausteine": [
-        "BES.5.A15.1"
-      ],
       "required": true
     },
     {
@@ -198,9 +165,6 @@
         "de": "24/7-Telefon für kritische Vorfallsmeldungen."
       },
       "legalBasis": "CIR 2024/2690 §5.1.4(d)",
-      "bsiBausteine": [
-        "BES.5.A15.1"
-      ],
       "required": false
     },
     {
@@ -216,9 +180,6 @@
         "de": "Maximale Zeit von Vorfallserkennung bis Kundenbenachrichtigung."
       },
       "legalBasis": "NIS2 Art. 23",
-      "bsiBausteine": [
-        "BES.5.A15.2"
-      ],
       "required": false
     },
     {
@@ -234,10 +195,6 @@
         "de": "Optional. ENISA TIG §5.1.2 — falls Ihr Unternehmen selbst NIS2-reguliert mit BSI-Registrierung ist, können Ihre Kunden diese Tatsache zur Erfüllung ihrer §5.1.2 Lieferantenauswahlkriterien nutzen."
       },
       "legalBasis": "ENISA TIG §5.1.2",
-      "bsiBausteine": [
-        "BES.4.A6.2",
-        "DLS.2.A1.1"
-      ],
       "required": false
     },
     {
@@ -253,10 +210,6 @@
         "de": "Bestimmt, welche technischen Fragen als Nächstes erscheinen. Mehrfachauswahl möglich."
       },
       "legalBasis": "ENISA TIG §5.2(b)",
-      "bsiBausteine": [
-        "BES.3.A1",
-        "DLS.6.A1"
-      ],
       "required": true
     },
     {
@@ -272,9 +225,6 @@
         "de": "Software, die Ihre Kunden auf eigener Hardware betreiben."
       },
       "legalBasis": "ENISA TIG §5.2(b)",
-      "bsiBausteine": [
-        "BES.3.A1"
-      ],
       "required": true
     },
     {
@@ -290,9 +240,6 @@
         "de": "Beratung, Implementierung, Schulung, Audit-Tätigkeiten."
       },
       "legalBasis": "ENISA TIG §5.2(b)",
-      "bsiBausteine": [
-        "BES.3.A1"
-      ],
       "required": true
     },
     {
@@ -308,9 +255,6 @@
         "de": "Betrieb der Kunden-IT im Auftrag (MSP, MSSP)."
       },
       "legalBasis": "ENISA TIG §5.2(b)",
-      "bsiBausteine": [
-        "BES.3.A1"
-      ],
       "required": true
     },
     {
@@ -326,10 +270,6 @@
         "de": "Erforderlich nach CIR 2024/2690 §5.1.2(a) — Cybersecurity-Praktiken der Lieferanten."
       },
       "legalBasis": "CIR 2024/2690 §5.1.2(a)",
-      "bsiBausteine": [
-        "BES.4.A5",
-        "DLS.2.A1"
-      ],
       "required": true
     },
     {
@@ -345,10 +285,6 @@
         "de": "Erforderlich nach CIR 2024/2690 §5.1.2(b). Zertifikat über den Reiter „Zertifizierungen“ hochladen."
       },
       "legalBasis": "CIR 2024/2690 §5.1.2(b)",
-      "bsiBausteine": [
-        "BES.4.A6.1",
-        "DLS.2.A1.1"
-      ],
       "required": true
     },
     {
@@ -364,9 +300,6 @@
         "de": "Erforderlich nach CIR 2024/2690 §5.1.4(b) — Sensibilisierung, Fähigkeiten und Schulung."
       },
       "legalBasis": "CIR 2024/2690 §5.1.4(b)",
-      "bsiBausteine": [
-        "BES.5.A11"
-      ],
       "required": true
     },
     {
@@ -382,9 +315,6 @@
         "de": "Erforderlich nach CIR 2024/2690 §5.1.4(c) — Zuverlässigkeitsprüfung des Personals."
       },
       "legalBasis": "CIR 2024/2690 §5.1.4(c)",
-      "bsiBausteine": [
-        "BES.4.A7"
-      ],
       "required": true
     },
     {
@@ -400,9 +330,6 @@
         "de": "Erforderlich nach CIR 2024/2690 §5.1.4(f) — Behandlung von Schwachstellen mit Risiko."
       },
       "legalBasis": "CIR 2024/2690 §5.1.4(f)",
-      "bsiBausteine": [
-        "BES.5.A15.3"
-      ],
       "required": true
     },
     {
@@ -418,9 +345,6 @@
         "de": "Erforderlich nach CIR 2024/2690 §5.1.4(e) — Auditrecht oder Bereitstellung von Auditberichten."
       },
       "legalBasis": "CIR 2024/2690 §5.1.4(e)",
-      "bsiBausteine": [
-        "BES.5.A16"
-      ],
       "required": true
     },
     {
@@ -436,9 +360,6 @@
         "de": "Erforderlich nach CIR 2024/2690 §5.1.4(g) — Anforderungen an Unterauftragsvergabe."
       },
       "legalBasis": "CIR 2024/2690 §5.1.4(g)",
-      "bsiBausteine": [
-        "BES.5.A8"
-      ],
       "required": true
     },
     {
@@ -454,10 +375,6 @@
         "de": "Listen Sie die Sub-Unternehmer und ihre Aufgaben auf. CIR 2024/2690 §5.1.4(g)."
       },
       "legalBasis": "CIR 2024/2690 §5.1.4(g)",
-      "bsiBausteine": [
-        "BES.5.A8",
-        "BES.5.A9"
-      ],
       "required": false,
       "visibleWhen": {
         "field": "hasSubprocessors",
@@ -477,10 +394,6 @@
         "de": "Erforderlich nach CIR 2024/2690 §5.1.4(h) — Rückgabe und Vernichtung von Informationen bei Vertragsende."
       },
       "legalBasis": "CIR 2024/2690 §5.1.4(h)",
-      "bsiBausteine": [
-        "BES.6.A2",
-        "BES.6.A4"
-      ],
       "required": true
     },
     {
@@ -496,9 +409,6 @@
         "de": "DSGVO Art. 28 — schriftlicher Auftragsverarbeitungsvertrag."
       },
       "legalBasis": "GDPR Art. 28",
-      "bsiBausteine": [
-        "BES.5.A5"
-      ],
       "required": true
     },
     {
@@ -513,10 +423,7 @@
         "en": "Required by CIR 2024/2690 §5.1.1(c) — security policies must be reviewed and updated regularly.",
         "de": "Erforderlich nach CIR 2024/2690 §5.1.1(c) — Sicherheitsrichtlinien müssen regelmäßig überprüft und aktualisiert werden."
       },
-      "legalBasis": "CIR 2024/2690 §5.1.1(c)",
-      "bsiBausteine": [
-        "BES.4.A2"
-      ],
+      "legalBasis": "NIS2 Art. 21(2)(a) / ENISA TIG §1.1",
       "required": true
     },
     {
@@ -531,10 +438,7 @@
         "en": "Required by CIR 2024/2690 §5.1.3 / NIS2 Art. 21(2)(b) — documented incident handling procedures.",
         "de": "Erforderlich nach CIR 2024/2690 §5.1.3 / NIS2 Art. 21(2)(b) — dokumentierte Verfahren zur Behandlung von Sicherheitsvorfällen."
       },
-      "legalBasis": "NIS2 Art. 21(2)(b) / CIR 2024/2690 §5.1.3",
-      "bsiBausteine": [
-        "BES.5.A15"
-      ],
+      "legalBasis": "NIS2 Art. 21(2)(b) / ENISA TIG §3",
       "required": true
     },
     {
@@ -549,11 +453,7 @@
         "en": "Required by CIR 2024/2690 §5.1.5 / NIS2 Art. 21(2)(c) — business continuity and crisis management.",
         "de": "Erforderlich nach CIR 2024/2690 §5.1.5 / NIS2 Art. 21(2)(c) — Aufrechterhaltung des Betriebs und Krisenmanagement."
       },
-      "legalBasis": "NIS2 Art. 21(2)(c) / CIR 2024/2690 §5.1.5",
-      "bsiBausteine": [
-        "BES.8.A2",
-        "BES.8.A3"
-      ],
+      "legalBasis": "NIS2 Art. 21(2)(c) / ENISA TIG §4",
       "required": true
     },
     {
@@ -568,11 +468,7 @@
         "en": "Required by CIR 2024/2690 §5.1.6 / NIS2 Art. 21(2)(h) — policies and procedures regarding the use of cryptography.",
         "de": "Erforderlich nach CIR 2024/2690 §5.1.6 / NIS2 Art. 21(2)(h) — Konzepte und Verfahren zur Verwendung von Kryptografie."
       },
-      "legalBasis": "NIS2 Art. 21(2)(h) / CIR 2024/2690 §5.1.6",
-      "bsiBausteine": [
-        "DLS.5.A9",
-        "DLS.5.A10"
-      ],
+      "legalBasis": "NIS2 Art. 21(2)(h) / ENISA TIG §9",
       "required": true
     },
     {
@@ -587,10 +483,7 @@
         "en": "Required by CIR 2024/2690 §5.1.7 / NIS2 Art. 21(2)(i) — access control policies for privileged accounts.",
         "de": "Erforderlich nach CIR 2024/2690 §5.1.7 / NIS2 Art. 21(2)(i) — Zugriffskontrollkonzepte für privilegierte Konten."
       },
-      "legalBasis": "NIS2 Art. 21(2)(i) / CIR 2024/2690 §5.1.7",
-      "bsiBausteine": [
-        "BES.5.A7"
-      ],
+      "legalBasis": "NIS2 Art. 21(2)(i) / ENISA TIG §11.3",
       "required": true
     },
     {
@@ -606,9 +499,6 @@
         "de": "Erforderlich nach NIS2 Art. 21(2)(j) — Mehr-Faktor-Authentisierung für Konten mit erhöhten Rechten."
       },
       "legalBasis": "NIS2 Art. 21(2)(j)",
-      "bsiBausteine": [
-        "BES.4.A4.1"
-      ],
       "required": true
     },
     {
@@ -623,10 +513,7 @@
         "en": "Required by CIR 2024/2690 §5.1.8 / NIS2 Art. 21(2)(i) — asset management.",
         "de": "Erforderlich nach CIR 2024/2690 §5.1.8 / NIS2 Art. 21(2)(i) — Asset-Management."
       },
-      "legalBasis": "NIS2 Art. 21(2)(i) / CIR 2024/2690 §5.1.8",
-      "bsiBausteine": [
-        "ASST.4.A1"
-      ],
+      "legalBasis": "NIS2 Art. 21(2)(i) / ENISA TIG §12.4",
       "required": true
     },
     {
@@ -641,10 +528,7 @@
         "en": "Required by CIR 2024/2690 §5.1.12 — testing of cybersecurity risk-management measures.",
         "de": "Erforderlich nach CIR 2024/2690 §5.1.12 — Wirksamkeitsprüfung der Cybersicherheits-Risikomanagementmaßnahmen."
       },
-      "legalBasis": "CIR 2024/2690 §5.1.12",
-      "bsiBausteine": [
-        "BES.4.A6"
-      ],
+      "legalBasis": "NIS2 Art. 21(2)(e) / ENISA TIG §6.5",
       "required": true
     },
     {
@@ -660,9 +544,6 @@
         "de": "ENISA TIG §5.1.2 — Auswahlkriterien verlangen, dass Einrichtungen 'die Historie des Lieferanten in Bezug auf Cybersicherheitsereignisse und Sicherheitsverletzungen' berücksichtigen."
       },
       "legalBasis": "ENISA TIG §5.1.2",
-      "bsiBausteine": [
-        "BES.5.A15.2"
-      ],
       "required": true
     },
     {
@@ -678,9 +559,6 @@
         "de": "ENISA TIG §5.1.4 TIPS — Verpflichtung des Lieferanten zur Unterstützung des Kunden ohne / zu vorab definierten Kosten bei einem Cyber-Vorfall durch das IKT-Produkt oder -Dienstleistung."
       },
       "legalBasis": "ENISA TIG §5.1.4 TIPS",
-      "bsiBausteine": [
-        "BES.5.A15.5"
-      ],
       "required": true
     },
     {
@@ -696,9 +574,6 @@
         "de": "ENISA TIG §5.1.4 TIPS — Verpflichtung des Lieferanten zur vollständigen Kooperation mit zuständigen Behörden bei Inspektionen, Audits und Vorfallbearbeitung."
       },
       "legalBasis": "ENISA TIG §5.1.4 TIPS",
-      "bsiBausteine": [
-        "BES.5.A3"
-      ],
       "required": true
     },
     {
@@ -714,10 +589,6 @@
         "de": "ENISA TIG §5.1.4 TIPS — Benachrichtigung über jede Entwicklung, die wesentliche Auswirkungen auf die Fähigkeit des Lieferanten zur effektiven Bereitstellung der IKT-Produkte oder -Dienstleistungen haben könnte."
       },
       "legalBasis": "ENISA TIG §5.1.4 TIPS",
-      "bsiBausteine": [
-        "BES.5.A13",
-        "BES.5.A14"
-      ],
       "required": true
     },
     {
@@ -733,9 +604,6 @@
         "de": "ENISA TIG §5.1.4 TIPS — Benachrichtigung des Kunden im Voraus, wenn sich Verarbeitungsstandorte ändern sollen."
       },
       "legalBasis": "ENISA TIG §5.1.4 TIPS",
-      "bsiBausteine": [
-        "BES.2.A2"
-      ],
       "required": true
     },
     {
@@ -751,10 +619,6 @@
         "de": "ENISA TIG §5.1.4 TIPS — Exit-Strategie mit verpflichtender angemessener Übergangszeit, IP-Bestimmungen und Verantwortlichkeiten des Lieferanten während der Exit-Phase."
       },
       "legalBasis": "ENISA TIG §5.1.4 TIPS",
-      "bsiBausteine": [
-        "BES.6.A1",
-        "BES.8.A1"
-      ],
       "required": true
     },
     {
@@ -769,11 +633,7 @@
         "en": "BSI IT-Grundschutz OPS.2.2 Cloud-Nutzung — where customer data is stored.",
         "de": "BSI IT-Grundschutz OPS.2.2 Cloud-Nutzung — wo Kundendaten gespeichert werden."
       },
-      "legalBasis": "BSI IT-Grundschutz OPS.2.2",
-      "bsiBausteine": [
-        "BES.2.A2",
-        "DLS.6.A1"
-      ],
+      "legalBasis": "ENISA TIG §5.2",
       "required": true,
       "visibleWhen": {
         "field": "isSaas",
@@ -792,10 +652,7 @@
         "en": "BSI IT-Grundschutz OPS.2.2.A11. AES-256 or equivalent.",
         "de": "BSI IT-Grundschutz OPS.2.2.A11. AES-256 oder gleichwertig."
       },
-      "legalBasis": "BSI IT-Grundschutz OPS.2.2.A11",
-      "bsiBausteine": [
-        "DLS.5.A10"
-      ],
+      "legalBasis": "NIS2 Art. 21(2)(h) / ENISA TIG §9",
       "required": true,
       "visibleWhen": {
         "field": "isSaas",
@@ -814,10 +671,7 @@
         "en": "BSI IT-Grundschutz OPS.2.2.A11. TLS 1.2 minimum, TLS 1.3 preferred.",
         "de": "BSI IT-Grundschutz OPS.2.2.A11. Mindestens TLS 1.2, vorzugsweise TLS 1.3."
       },
-      "legalBasis": "BSI IT-Grundschutz OPS.2.2.A11",
-      "bsiBausteine": [
-        "DLS.5.A9"
-      ],
+      "legalBasis": "NIS2 Art. 21(2)(h) / ENISA TIG §9",
       "required": true,
       "visibleWhen": {
         "field": "isSaas",
@@ -836,10 +690,7 @@
         "en": "BSI IT-Grundschutz ORP.4.A23 — second-factor authentication for privileged accounts.",
         "de": "BSI IT-Grundschutz ORP.4.A23 — Zwei-Faktor-Authentisierung für privilegierte Konten."
       },
-      "legalBasis": "BSI IT-Grundschutz ORP.4.A23",
-      "bsiBausteine": [
-        "BES.4.A4.1"
-      ],
+      "legalBasis": "NIS2 Art. 21(2)(j) / ENISA TIG §11.3",
       "required": true,
       "visibleWhen": {
         "field": "isSaas",
@@ -858,10 +709,7 @@
         "en": "BSI IT-Grundschutz DER.4 — maximum tolerated downtime for customer service.",
         "de": "BSI IT-Grundschutz DER.4 — maximal tolerierbare Ausfallzeit für den Kundenservice."
       },
-      "legalBasis": "BSI IT-Grundschutz DER.4",
-      "bsiBausteine": [
-        "BES.5.A2"
-      ],
+      "legalBasis": "NIS2 Art. 21(2)(c) / ENISA TIG §4",
       "required": true,
       "visibleWhen": {
         "field": "isSaas",
@@ -881,11 +729,6 @@
         "de": "CRA / NIS2 Lieferketten-Transparenz. Format: CycloneDX oder SPDX."
       },
       "legalBasis": "CRA / NIS2 Art. 21(2)(d)",
-      "bsiBausteine": [
-        "BES.7.A7",
-        "BES.7.A7.1",
-        "DEV.6.A3"
-      ],
       "required": true,
       "visibleWhen": {
         "field": "isOnPrem",
@@ -904,10 +747,7 @@
         "en": "BSI IT-Grundschutz CON.8 Software-Entwicklung — signed releases prevent supply-chain tampering.",
         "de": "BSI IT-Grundschutz CON.8 Software-Entwicklung — signierte Releases verhindern Lieferketten-Manipulation."
       },
-      "legalBasis": "BSI IT-Grundschutz CON.8",
-      "bsiBausteine": [
-        "BES.4.A4.3"
-      ],
+      "legalBasis": "NIS2 Art. 21(2)(e) / ENISA TIG §6.5",
       "required": true,
       "visibleWhen": {
         "field": "isOnPrem",
@@ -926,10 +766,7 @@
         "en": "BSI IT-Grundschutz CON.10. Public security.txt or contact for vulnerability reports.",
         "de": "BSI IT-Grundschutz CON.10. Öffentliche security.txt oder Kontakt für Schwachstellenmeldungen."
       },
-      "legalBasis": "BSI IT-Grundschutz CON.10",
-      "bsiBausteine": [
-        "BES.5.A15.3.1"
-      ],
+      "legalBasis": "NIS2 Art. 21(2)(e) / ENISA TIG §3",
       "required": true,
       "visibleWhen": {
         "field": "isOnPrem",
@@ -949,9 +786,6 @@
         "de": "Zeit von CVE-Veröffentlichung bis zur Patch-Verfügbarkeit für kritische Schwachstellen."
       },
       "legalBasis": "CIR 2024/2690 §5.1.4(f)",
-      "bsiBausteine": [
-        "BES.5.A15.3"
-      ],
       "required": true,
       "visibleWhen": {
         "field": "isOnPrem",
@@ -970,10 +804,7 @@
         "en": "BSI IT-Grundschutz ORP.2.A14 — staff vetting for sensitive roles.",
         "de": "BSI IT-Grundschutz ORP.2.A14 — Personalprüfung für sensible Rollen."
       },
-      "legalBasis": "BSI IT-Grundschutz ORP.2.A14",
-      "bsiBausteine": [
-        "BES.4.A7"
-      ],
+      "legalBasis": "NIS2 Art. 21(2)(i) / CIR 2024/2690 §5.1.4(c)",
       "required": true,
       "visibleWhen": {
         "field": "isProfessionalServices",
@@ -992,10 +823,7 @@
         "en": "BSI IT-Grundschutz ORP.2.A2 — confidentiality agreements with all consultants.",
         "de": "BSI IT-Grundschutz ORP.2.A2 — Vertraulichkeitsvereinbarungen mit allen Beratern."
       },
-      "legalBasis": "BSI IT-Grundschutz ORP.2.A2",
-      "bsiBausteine": [
-        "BES.5.A12"
-      ],
+      "legalBasis": "NIS2 Art. 21(2)(i) / ENISA TIG §11.4",
       "required": true,
       "visibleWhen": {
         "field": "isProfessionalServices",
@@ -1014,10 +842,7 @@
         "en": "BSI IT-Grundschutz ORP.3.A4 — security awareness on customer premises.",
         "de": "BSI IT-Grundschutz ORP.3.A4 — Sicherheitssensibilisierung auf Kundenstandort."
       },
-      "legalBasis": "BSI IT-Grundschutz ORP.3.A4",
-      "bsiBausteine": [
-        "BES.5.A7"
-      ],
+      "legalBasis": "NIS2 Art. 21(2)(i) / ENISA TIG §11.3",
       "required": true,
       "visibleWhen": {
         "field": "isProfessionalServices",
@@ -1036,10 +861,7 @@
         "en": "BSI IT-Grundschutz ORP.4.A26 — PAM for administrative remote access.",
         "de": "BSI IT-Grundschutz ORP.4.A26 — PAM für administrativen Fernzugriff."
       },
-      "legalBasis": "BSI IT-Grundschutz ORP.4.A26",
-      "bsiBausteine": [
-        "BES.5.A7"
-      ],
+      "legalBasis": "NIS2 Art. 21(2)(i) / ENISA TIG §11.3",
       "required": true,
       "visibleWhen": {
         "field": "isManagedService",
@@ -1058,10 +880,7 @@
         "en": "BSI IT-Grundschutz OPS.1.2.5.A11 — recorded remote maintenance sessions.",
         "de": "BSI IT-Grundschutz OPS.1.2.5.A11 — aufgezeichnete Fernwartungssitzungen."
       },
-      "legalBasis": "BSI IT-Grundschutz OPS.1.2.5.A11",
-      "bsiBausteine": [
-        "BES.5.A4"
-      ],
+      "legalBasis": "NIS2 Art. 21(2)(f) / ENISA TIG §10",
       "required": true,
       "visibleWhen": {
         "field": "isManagedService",
@@ -1080,10 +899,7 @@
         "en": "BSI IT-Grundschutz DER.2.1 — incident detection and response coverage.",
         "de": "BSI IT-Grundschutz DER.2.1 — Erkennungs- und Reaktionsabdeckung für Vorfälle."
       },
-      "legalBasis": "BSI IT-Grundschutz DER.2.1",
-      "bsiBausteine": [
-        "BES.5.A2"
-      ],
+      "legalBasis": "NIS2 Art. 21(2)(b) / ENISA TIG §3",
       "required": true,
       "visibleWhen": {
         "field": "isManagedService",

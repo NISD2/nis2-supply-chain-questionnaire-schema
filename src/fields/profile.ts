@@ -14,8 +14,7 @@ export const profileFields: SupplierField[] = [
       en: "Required by CIR 2024/2690 §5.2(a) — supplier register entry.",
       de: "Erforderlich nach CIR 2024/2690 §5.2(a) — Lieferantenregister-Eintrag.",
     },
-    legalBasis: "CIR 2024/2690 §5.2(a)",
-    bsiBausteine: ["BES.1.A2"],
+    legalBasis: "ENISA TIG §5.2",
     required: true,
   },
   {
@@ -27,8 +26,7 @@ export const profileFields: SupplierField[] = [
       en: "Required by CIR 2024/2690 §5.2(a) — supplier register entry.",
       de: "Erforderlich nach CIR 2024/2690 §5.2(a) — Lieferantenregister-Eintrag.",
     },
-    legalBasis: "CIR 2024/2690 §5.2(a)",
-    bsiBausteine: ["BES.1.A2"],
+    legalBasis: "ENISA TIG §5.2",
     required: true,
   },
   {
@@ -40,8 +38,7 @@ export const profileFields: SupplierField[] = [
       en: "ISO 3166-1 alpha-2 code, e.g. DE, FR, IT.",
       de: "ISO 3166-1 Alpha-2-Code, z. B. DE, FR, IT.",
     },
-    legalBasis: "CIR 2024/2690 §5.2(a)",
-    bsiBausteine: ["BES.1.A2", "BES.2.A2"],
+    legalBasis: "ENISA TIG §5.2",
     required: true,
   },
   {
@@ -54,7 +51,6 @@ export const profileFields: SupplierField[] = [
       de: "Die primäre öffentliche Domain des Lieferanten.",
     },
     legalBasis: "ENISA TIG §5.2(b)",
-    bsiBausteine: ["BES.1.A2"],
     required: false,
   },
   {
@@ -64,7 +60,6 @@ export const profileFields: SupplierField[] = [
     label: { en: "Tagline (one line, customer-facing)", de: "Slogan (eine Zeile, kundenseitig sichtbar)" },
     description: { en: "Short summary shown to customers.", de: "Kurze Beschreibung für Kunden." },
     legalBasis: "ENISA TIG §5.2(b)",
-    bsiBausteine: ["BES.1.A2"],
     required: false,
   },
   {
@@ -74,7 +69,6 @@ export const profileFields: SupplierField[] = [
     label: { en: "Public description (longer)", de: "Öffentliche Beschreibung (länger)" },
     description: { en: "Longer description of the supplier.", de: "Längere Beschreibung des Lieferanten." },
     legalBasis: "ENISA TIG §5.2(b)",
-    bsiBausteine: ["BES.3.A2"],
     required: false,
   },
   {
@@ -87,7 +81,6 @@ export const profileFields: SupplierField[] = [
       de: "Erforderlich nach ENISA TIG §5.2(b) + §5.1.4 TIPS — klare und vollständige Beschreibung der angebotenen IKT-Produkte und -Dienstleistungen. Ein Absatz.",
     },
     legalBasis: "ENISA TIG §5.2(b) + §5.1.4 TIPS",
-    bsiBausteine: ["BES.2.A1", "BES.3.A2"],
     required: true,
   },
   {
@@ -100,7 +93,6 @@ export const profileFields: SupplierField[] = [
       de: "Erforderlich nach ENISA TIG §5.1.4 TIPS — alle Länder / Regionen auflisten, in denen Kundendaten erstellt, verarbeitet oder gespeichert werden. Komma-getrennt.",
     },
     legalBasis: "ENISA TIG §5.1.4 TIPS",
-    bsiBausteine: ["BES.2.A2", "DLS.6.A1"],
     required: true,
   },
   {
@@ -113,7 +105,6 @@ export const profileFields: SupplierField[] = [
       de: "Erforderlich nach CIR 2024/2690 §5.1.4(d) — Meldekette für Sicherheitsvorfälle.",
     },
     legalBasis: "CIR 2024/2690 §5.1.4(d)",
-    bsiBausteine: ["BES.5.A15.1"],
     required: true,
   },
   {
@@ -126,7 +117,6 @@ export const profileFields: SupplierField[] = [
       de: "Standard-E-Mail für Vorfallsmeldungen durch Kunden.",
     },
     legalBasis: "CIR 2024/2690 §5.1.4(d)",
-    bsiBausteine: ["BES.5.A15.1"],
     required: true,
   },
   {
@@ -139,7 +129,6 @@ export const profileFields: SupplierField[] = [
       de: "24/7-Telefon für kritische Vorfallsmeldungen.",
     },
     legalBasis: "CIR 2024/2690 §5.1.4(d)",
-    bsiBausteine: ["BES.5.A15.1"],
     required: false,
   },
   {
@@ -152,7 +141,6 @@ export const profileFields: SupplierField[] = [
       de: "Maximale Zeit von Vorfallserkennung bis Kundenbenachrichtigung.",
     },
     legalBasis: "NIS2 Art. 23",
-    bsiBausteine: ["BES.5.A15.2"],
     required: false,
   },
   {
@@ -165,7 +153,6 @@ export const profileFields: SupplierField[] = [
       de: "Optional. ENISA TIG §5.1.2 — falls Ihr Unternehmen selbst NIS2-reguliert mit BSI-Registrierung ist, können Ihre Kunden diese Tatsache zur Erfüllung ihrer §5.1.2 Lieferantenauswahlkriterien nutzen.",
     },
     legalBasis: "ENISA TIG §5.1.2",
-    bsiBausteine: ["BES.4.A6.2", "DLS.2.A1.1"],
     required: false,
   },
   {
@@ -178,7 +165,6 @@ export const profileFields: SupplierField[] = [
       de: "Bestimmt, welche technischen Fragen als Nächstes erscheinen. Mehrfachauswahl möglich.",
     },
     legalBasis: "ENISA TIG §5.2(b)",
-    bsiBausteine: ["BES.3.A1", "DLS.6.A1"],
     required: true,
   },
   {
@@ -191,7 +177,6 @@ export const profileFields: SupplierField[] = [
       de: "Software, die Ihre Kunden auf eigener Hardware betreiben.",
     },
     legalBasis: "ENISA TIG §5.2(b)",
-    bsiBausteine: ["BES.3.A1"],
     required: true,
   },
   {
@@ -204,7 +189,6 @@ export const profileFields: SupplierField[] = [
       de: "Beratung, Implementierung, Schulung, Audit-Tätigkeiten.",
     },
     legalBasis: "ENISA TIG §5.2(b)",
-    bsiBausteine: ["BES.3.A1"],
     required: true,
   },
   {
@@ -217,7 +201,6 @@ export const profileFields: SupplierField[] = [
       de: "Betrieb der Kunden-IT im Auftrag (MSP, MSSP).",
     },
     legalBasis: "ENISA TIG §5.2(b)",
-    bsiBausteine: ["BES.3.A1"],
     required: true,
   },
 ];

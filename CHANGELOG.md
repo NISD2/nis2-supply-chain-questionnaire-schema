@@ -4,6 +4,30 @@ All notable changes to this repository are documented here. Format follows [Keep
 
 ## [Unreleased]
 
+## [2.0.0] — 2026-04-28
+
+### Removed (BREAKING)
+- **`bsiBausteine` field removed from the schema.** The repo no longer publishes BSI Grundschutz Baustein tags. Rationale: ties an EU-level questionnaire to one member state's framework, defeating universal usability; BSI renumbered Bausteine in October 2025 (the v1.0 Lieferketten-Checkliste IDs no longer match), creating perpetual maintenance drift; and the Baustein labels added no value to actually using the questionnaire — the supplier's answer satisfies the EU obligation regardless of the national tag. Member-state national overlays belong in their own downstream extension repos.
+- `data/bsi-lieferketten-mapping.md` removed.
+- `scripts/generate-bsi-mapping.py` removed.
+- `bun run generate:bsi-mapping` script removed.
+
+### Fixed
+- **Re-anchored 14 fields away from fabricated `CIR 2024/2690 §5.1.x` sub-letters.** CIR §5 is the supply-chain section only; non-supply-chain topics (incident handling, BCP, cryptography, privileged access, asset inventory, pen-testing) live in their own CIR sections. New citations point to the correct ENISA TIG sections (§3, §4, §6.5, §9, §11.3, §12.4, §1.1).
+- **Re-anchored 9 BSI-cited technical fields** (SaaS encryption, MFA, RTO; on-prem signing/vuln-disclosure; pro-services NDA/access; managed-services privileged-access/session-recording/on-call) to NIS2 Art. 21(2) + ENISA TIG sections.
+- `legalName`, `registeredAddress`, `country` no longer cited to `CIR 2024/2690 §5.2(a)` (which is "contact points"); now cite ENISA TIG §5.2 (the supplier register itself).
+- `prepare: tsc` script (added in v1.4.1) ensures consumers installing from GitHub get a usable `dist/` build automatically.
+
+### Changed
+- README repositioned: explicitly EU-only, with a "what's deliberately out of scope" section explaining why national derivatives stay downstream.
+- Test suite swap: removed BSI Baustein presence/regex tests; added a citation-provenance test that asserts every field cites an EU-level instrument and no field cites a banned national-derivative term.
+- CONTRIBUTING.md updated to reflect EU-only scope.
+
+### Migration
+- Consumers depending on `field.bsiBausteine` need to remove that access — the property no longer exists.
+- Consumers reading `data/supply-chain-questionnaire.json` directly: the same fields exist with the same IDs and types; only `legalBasis` strings have been updated and `bsiBausteine` arrays are gone.
+- Consumers depending on the inverse mapping doc need to switch to a different source (BSI publishes its own Lieferketten-Checkliste; we no longer mirror it here).
+
 ## [1.4.2] — 2026-04-28
 
 ### Fixed

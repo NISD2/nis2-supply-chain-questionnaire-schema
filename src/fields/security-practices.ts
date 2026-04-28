@@ -15,7 +15,6 @@ export const securityPracticesFields: SupplierField[] = [
       de: "Erforderlich nach CIR 2024/2690 §5.1.2(a) — Cybersecurity-Praktiken der Lieferanten.",
     },
     legalBasis: "CIR 2024/2690 §5.1.2(a)",
-    bsiBausteine: ["BES.4.A5", "DLS.2.A1"],
     required: true,
   },
   {
@@ -28,7 +27,6 @@ export const securityPracticesFields: SupplierField[] = [
       de: "Erforderlich nach CIR 2024/2690 §5.1.2(b). Zertifikat über den Reiter „Zertifizierungen“ hochladen.",
     },
     legalBasis: "CIR 2024/2690 §5.1.2(b)",
-    bsiBausteine: ["BES.4.A6.1", "DLS.2.A1.1"],
     required: true,
   },
   {
@@ -41,7 +39,6 @@ export const securityPracticesFields: SupplierField[] = [
       de: "Erforderlich nach CIR 2024/2690 §5.1.4(b) — Sensibilisierung, Fähigkeiten und Schulung.",
     },
     legalBasis: "CIR 2024/2690 §5.1.4(b)",
-    bsiBausteine: ["BES.5.A11"],
     required: true,
   },
   {
@@ -54,7 +51,6 @@ export const securityPracticesFields: SupplierField[] = [
       de: "Erforderlich nach CIR 2024/2690 §5.1.4(c) — Zuverlässigkeitsprüfung des Personals.",
     },
     legalBasis: "CIR 2024/2690 §5.1.4(c)",
-    bsiBausteine: ["BES.4.A7"],
     required: true,
   },
   {
@@ -67,7 +63,6 @@ export const securityPracticesFields: SupplierField[] = [
       de: "Erforderlich nach CIR 2024/2690 §5.1.4(f) — Behandlung von Schwachstellen mit Risiko.",
     },
     legalBasis: "CIR 2024/2690 §5.1.4(f)",
-    bsiBausteine: ["BES.5.A15.3"],
     required: true,
   },
   {
@@ -80,7 +75,6 @@ export const securityPracticesFields: SupplierField[] = [
       de: "Erforderlich nach CIR 2024/2690 §5.1.4(e) — Auditrecht oder Bereitstellung von Auditberichten.",
     },
     legalBasis: "CIR 2024/2690 §5.1.4(e)",
-    bsiBausteine: ["BES.5.A16"],
     required: true,
   },
   {
@@ -93,7 +87,6 @@ export const securityPracticesFields: SupplierField[] = [
       de: "Erforderlich nach CIR 2024/2690 §5.1.4(g) — Anforderungen an Unterauftragsvergabe.",
     },
     legalBasis: "CIR 2024/2690 §5.1.4(g)",
-    bsiBausteine: ["BES.5.A8"],
     required: true,
   },
   {
@@ -106,7 +99,6 @@ export const securityPracticesFields: SupplierField[] = [
       de: "Listen Sie die Sub-Unternehmer und ihre Aufgaben auf. CIR 2024/2690 §5.1.4(g).",
     },
     legalBasis: "CIR 2024/2690 §5.1.4(g)",
-    bsiBausteine: ["BES.5.A8", "BES.5.A9"],
     required: false,
     visibleWhen: { field: "hasSubprocessors", equals: true },
   },
@@ -120,7 +112,6 @@ export const securityPracticesFields: SupplierField[] = [
       de: "Erforderlich nach CIR 2024/2690 §5.1.4(h) — Rückgabe und Vernichtung von Informationen bei Vertragsende.",
     },
     legalBasis: "CIR 2024/2690 §5.1.4(h)",
-    bsiBausteine: ["BES.6.A2", "BES.6.A4"],
     required: true,
   },
   {
@@ -133,7 +124,6 @@ export const securityPracticesFields: SupplierField[] = [
       de: "DSGVO Art. 28 — schriftlicher Auftragsverarbeitungsvertrag.",
     },
     legalBasis: "GDPR Art. 28",
-    bsiBausteine: ["BES.5.A5"],
     required: true,
   },
   {
@@ -145,8 +135,7 @@ export const securityPracticesFields: SupplierField[] = [
       en: "Required by CIR 2024/2690 §5.1.1(c) — security policies must be reviewed and updated regularly.",
       de: "Erforderlich nach CIR 2024/2690 §5.1.1(c) — Sicherheitsrichtlinien müssen regelmäßig überprüft und aktualisiert werden.",
     },
-    legalBasis: "CIR 2024/2690 §5.1.1(c)",
-    bsiBausteine: ["BES.4.A2"],
+    legalBasis: "NIS2 Art. 21(2)(a) / ENISA TIG §1.1",
     required: true,
   },
   {
@@ -158,8 +147,7 @@ export const securityPracticesFields: SupplierField[] = [
       en: "Required by CIR 2024/2690 §5.1.3 / NIS2 Art. 21(2)(b) — documented incident handling procedures.",
       de: "Erforderlich nach CIR 2024/2690 §5.1.3 / NIS2 Art. 21(2)(b) — dokumentierte Verfahren zur Behandlung von Sicherheitsvorfällen.",
     },
-    legalBasis: "NIS2 Art. 21(2)(b) / CIR 2024/2690 §5.1.3",
-    bsiBausteine: ["BES.5.A15"],
+    legalBasis: "NIS2 Art. 21(2)(b) / ENISA TIG §3",
     required: true,
   },
   {
@@ -171,8 +159,7 @@ export const securityPracticesFields: SupplierField[] = [
       en: "Required by CIR 2024/2690 §5.1.5 / NIS2 Art. 21(2)(c) — business continuity and crisis management.",
       de: "Erforderlich nach CIR 2024/2690 §5.1.5 / NIS2 Art. 21(2)(c) — Aufrechterhaltung des Betriebs und Krisenmanagement.",
     },
-    legalBasis: "NIS2 Art. 21(2)(c) / CIR 2024/2690 §5.1.5",
-    bsiBausteine: ["BES.8.A2", "BES.8.A3"],
+    legalBasis: "NIS2 Art. 21(2)(c) / ENISA TIG §4",
     required: true,
   },
   {
@@ -184,8 +171,7 @@ export const securityPracticesFields: SupplierField[] = [
       en: "Required by CIR 2024/2690 §5.1.6 / NIS2 Art. 21(2)(h) — policies and procedures regarding the use of cryptography.",
       de: "Erforderlich nach CIR 2024/2690 §5.1.6 / NIS2 Art. 21(2)(h) — Konzepte und Verfahren zur Verwendung von Kryptografie.",
     },
-    legalBasis: "NIS2 Art. 21(2)(h) / CIR 2024/2690 §5.1.6",
-    bsiBausteine: ["DLS.5.A9", "DLS.5.A10"],
+    legalBasis: "NIS2 Art. 21(2)(h) / ENISA TIG §9",
     required: true,
   },
   {
@@ -197,8 +183,7 @@ export const securityPracticesFields: SupplierField[] = [
       en: "Required by CIR 2024/2690 §5.1.7 / NIS2 Art. 21(2)(i) — access control policies for privileged accounts.",
       de: "Erforderlich nach CIR 2024/2690 §5.1.7 / NIS2 Art. 21(2)(i) — Zugriffskontrollkonzepte für privilegierte Konten.",
     },
-    legalBasis: "NIS2 Art. 21(2)(i) / CIR 2024/2690 §5.1.7",
-    bsiBausteine: ["BES.5.A7"],
+    legalBasis: "NIS2 Art. 21(2)(i) / ENISA TIG §11.3",
     required: true,
   },
   {
@@ -211,7 +196,6 @@ export const securityPracticesFields: SupplierField[] = [
       de: "Erforderlich nach NIS2 Art. 21(2)(j) — Mehr-Faktor-Authentisierung für Konten mit erhöhten Rechten.",
     },
     legalBasis: "NIS2 Art. 21(2)(j)",
-    bsiBausteine: ["BES.4.A4.1"],
     required: true,
   },
   {
@@ -223,8 +207,7 @@ export const securityPracticesFields: SupplierField[] = [
       en: "Required by CIR 2024/2690 §5.1.8 / NIS2 Art. 21(2)(i) — asset management.",
       de: "Erforderlich nach CIR 2024/2690 §5.1.8 / NIS2 Art. 21(2)(i) — Asset-Management.",
     },
-    legalBasis: "NIS2 Art. 21(2)(i) / CIR 2024/2690 §5.1.8",
-    bsiBausteine: ["ASST.4.A1"],
+    legalBasis: "NIS2 Art. 21(2)(i) / ENISA TIG §12.4",
     required: true,
   },
   {
@@ -236,8 +219,7 @@ export const securityPracticesFields: SupplierField[] = [
       en: "Required by CIR 2024/2690 §5.1.12 — testing of cybersecurity risk-management measures.",
       de: "Erforderlich nach CIR 2024/2690 §5.1.12 — Wirksamkeitsprüfung der Cybersicherheits-Risikomanagementmaßnahmen.",
     },
-    legalBasis: "CIR 2024/2690 §5.1.12",
-    bsiBausteine: ["BES.4.A6"],
+    legalBasis: "NIS2 Art. 21(2)(e) / ENISA TIG §6.5",
     required: true,
   },
   {
@@ -250,7 +232,6 @@ export const securityPracticesFields: SupplierField[] = [
       de: "ENISA TIG §5.1.2 — Auswahlkriterien verlangen, dass Einrichtungen 'die Historie des Lieferanten in Bezug auf Cybersicherheitsereignisse und Sicherheitsverletzungen' berücksichtigen.",
     },
     legalBasis: "ENISA TIG §5.1.2",
-    bsiBausteine: ["BES.5.A15.2"],
     required: true,
   },
   {
@@ -263,7 +244,6 @@ export const securityPracticesFields: SupplierField[] = [
       de: "ENISA TIG §5.1.4 TIPS — Verpflichtung des Lieferanten zur Unterstützung des Kunden ohne / zu vorab definierten Kosten bei einem Cyber-Vorfall durch das IKT-Produkt oder -Dienstleistung.",
     },
     legalBasis: "ENISA TIG §5.1.4 TIPS",
-    bsiBausteine: ["BES.5.A15.5"],
     required: true,
   },
   {
@@ -276,7 +256,6 @@ export const securityPracticesFields: SupplierField[] = [
       de: "ENISA TIG §5.1.4 TIPS — Verpflichtung des Lieferanten zur vollständigen Kooperation mit zuständigen Behörden bei Inspektionen, Audits und Vorfallbearbeitung.",
     },
     legalBasis: "ENISA TIG §5.1.4 TIPS",
-    bsiBausteine: ["BES.5.A3"],
     required: true,
   },
   {
@@ -289,7 +268,6 @@ export const securityPracticesFields: SupplierField[] = [
       de: "ENISA TIG §5.1.4 TIPS — Benachrichtigung über jede Entwicklung, die wesentliche Auswirkungen auf die Fähigkeit des Lieferanten zur effektiven Bereitstellung der IKT-Produkte oder -Dienstleistungen haben könnte.",
     },
     legalBasis: "ENISA TIG §5.1.4 TIPS",
-    bsiBausteine: ["BES.5.A13", "BES.5.A14"],
     required: true,
   },
   {
@@ -302,7 +280,6 @@ export const securityPracticesFields: SupplierField[] = [
       de: "ENISA TIG §5.1.4 TIPS — Benachrichtigung des Kunden im Voraus, wenn sich Verarbeitungsstandorte ändern sollen.",
     },
     legalBasis: "ENISA TIG §5.1.4 TIPS",
-    bsiBausteine: ["BES.2.A2"],
     required: true,
   },
   {
@@ -315,7 +292,6 @@ export const securityPracticesFields: SupplierField[] = [
       de: "ENISA TIG §5.1.4 TIPS — Exit-Strategie mit verpflichtender angemessener Übergangszeit, IP-Bestimmungen und Verantwortlichkeiten des Lieferanten während der Exit-Phase.",
     },
     legalBasis: "ENISA TIG §5.1.4 TIPS",
-    bsiBausteine: ["BES.6.A1", "BES.8.A1"],
     required: true,
   },
 ];
