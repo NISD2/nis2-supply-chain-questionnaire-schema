@@ -2,7 +2,7 @@
 // Field definitions live in the Zod schema; this file is just a starting
 // point for response persistence. Adapt FK targets and tenant model to your
 // stack. The only contract is that fieldId matches an id from
-// supplier-questionnaire.json.
+// supply-chain-questionnaire.json.
 
 import {
   pgTable,
