@@ -34,7 +34,7 @@ The reference implementation is the supplier portal at [nisd2.eu](https://nisd2.
 This package is **not on the npm registry** — install directly from GitHub.
 
 ```bash
-bun add github:NISD2/nis2-supply-chain-questionnaire#v1.4.0
+bun add github:NISD2/nis2-supply-chain-questionnaire#v1.4.1
 # npm, pnpm, yarn — same syntax
 ```
 

@@ -4,6 +4,20 @@ All notable changes to this repository are documented here. Format follows [Keep
 
 ## [Unreleased]
 
+## [1.4.2] — 2026-04-28
+
+### Fixed
+- `bsiBausteine` regex (`/^[A-Z]+(\.[0-9A-Z]+)+$/`) now anchors the tail correctly. The earlier pattern `/^[A-Z]+\.[0-9A-Z][0-9A-Z.]*$/` accepted trailing dots like `BES.A1.` Regression test added.
+
+### Changed
+- `examples/drizzle-storage-reference.ts` is now typechecked in CI via `tsconfig.examples.json` so it cannot rot. Added `drizzle-orm` as a dev dependency.
+- README install command updated to v1.4.1 (was stale at v1.4.0).
+
+## [1.4.1] — 2026-04-28
+
+### Added
+- `prepare: tsc` script so consumers installing from GitHub get a usable `dist/` build automatically.
+
 ## [1.4.0] — 2026-04-28
 
 ### Changed

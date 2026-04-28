@@ -125,7 +125,7 @@
                 "type": "array",
                 "items": {
                   "type": "string",
-                  "pattern": "^[A-Z]+\\.[0-9A-Z][0-9A-Z.]*$"
+                  "pattern": "^[A-Z]+(\\.[0-9A-Z]+)+$"
                 }
               },
               "required": {

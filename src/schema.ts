@@ -62,7 +62,7 @@ export const supplierFieldSchema = z.object({
    * Optional and additive — fields without supplier-specific Baustein
    * coverage simply omit this array.
    */
-  bsiBausteine: z.array(z.string().regex(/^[A-Z]+\.[0-9A-Z][0-9A-Z.]*$/)).optional(),
+  bsiBausteine: z.array(z.string().regex(/^[A-Z]+(\.[0-9A-Z]+)+$/)).optional(),
   required: z.boolean(),
   visibleWhen: z
     .object({
