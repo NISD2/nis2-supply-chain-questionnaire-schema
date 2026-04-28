@@ -1,11 +1,27 @@
-import raw from "../data/supplier-questionnaire.json";
 import {
   supplierQuestionnaireSchema,
   type SupplierQuestionnaire,
 } from "./schema";
+import { allFields } from "./fields";
+
+/**
+ * Source of truth lives in `src/fields/<section>.ts` (TypeScript with full
+ * type safety on label, type, section, and Baustein IDs). The bundled JSON
+ * artefact at `data/supplier-questionnaire.json` is generated from these
+ * files via `bun run build:json` and shipped for non-TS consumers.
+ *
+ * Bump these constants when shipping a release; CI will fail if the
+ * generated JSON falls out of sync.
+ */
+export const VERSION = "1.2.0";
+export const LAST_UPDATED = "2026-04-28";
 
 export const supplierQuestionnaire: SupplierQuestionnaire =
-  supplierQuestionnaireSchema.parse(raw);
+  supplierQuestionnaireSchema.parse({
+    version: VERSION,
+    lastUpdated: LAST_UPDATED,
+    fields: allFields,
+  });
 
 export function groupBySection(q: SupplierQuestionnaire) {
   const out = new Map<string, typeof q.fields>();

@@ -17,5 +17,7 @@ jobs:
       - run: bun install --no-save
       - name: Typecheck
         run: bun run typecheck
-      - name: Schema validates bundled JSON
+      - name: TS source validates against schema
         run: bun run validate
+      - name: JSON artefact matches TS source
+        run: bun run check:json-in-sync

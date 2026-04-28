@@ -1,6 +1,6 @@
 {
   "name": "@nisd2/nis2-supplier-questionnaire",
-  "version": "1.1.0",
+  "version": "1.2.0",
   "description": "Open NIS2 supply-chain questionnaire — a Zod-typed catalogue of supplier-due-diligence fields anchored to NIS2, CIR 2024/2690, ENISA TIG, and BSI IT-Grundschutz. The questions a customer subject to NIS2 supply-chain obligations needs to ask their suppliers.",
   "license": "SEE LICENSE IN LICENSE",
   "homepage": "https://github.com/NISD2/nis2-supplier-questionnaire",
@@ -52,7 +52,10 @@
   "scripts": {
     "build": "tsc",
     "typecheck": "tsc --noEmit",
-    "validate": "bun src/data.ts && echo 'OK: supplier-questionnaire.json validates against schema'"
+    "build:json": "bun scripts/build-json.ts",
+    "generate:bsi-mapping": "python3 scripts/generate-bsi-mapping.py",
+    "validate": "bun src/data.ts && echo 'OK: TS source validates against schema'",
+    "check:json-in-sync": "bun scripts/build-json.ts && git diff --exit-code data/supplier-questionnaire.json"
   },
   "dependencies": {
     "zod": "^3.23.0"

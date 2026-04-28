@@ -6,7 +6,7 @@
 
 Maintained by [Kardashev Catalyst UG](https://nisd2.eu) — operator of [nisd2.eu](https://nisd2.eu) — and the same questionnaire that powers the supplier portal at nisd2.eu.
 
-The Zod schema is the source of truth. The bundled JSON snapshot is a derived, schema-validated artefact.
+Source of truth lives in [`src/fields/<section>.ts`](./src/fields/) — typed, with full TypeScript autocomplete on enums, citations, and Baustein IDs. The bundled JSON at [`data/supplier-questionnaire.json`](./data/supplier-questionnaire.json) is generated from these files for non-TS consumers.
 
 ---
 
@@ -25,12 +25,42 @@ A single shared, openly maintained, legally-anchored questionnaire is more valua
 
 ## Why a schema, not just a JSON file
 
-A JSON-only release is a dead artefact: nobody can validate it without re-deriving the rules, and forks drift silently. A Zod schema is alive:
+A JSON-only release is a dead artefact: nobody can validate it without re-deriving the rules, and forks drift silently. The TypeScript field files + Zod schema are alive:
 
-- **TypeScript consumers** import the schema directly and get full type safety.
-- **Non-TS consumers** generate JSON Schema via [`zod-to-json-schema`](https://github.com/StefanTerdell/zod-to-json-schema) and use it from Python, Go, Rust, Excel, anywhere.
+- **TypeScript consumers** import the data directly and get full type safety, autocomplete on enums, and inline IDE hints.
+- **Non-TS consumers** read the bundled `data/supplier-questionnaire.json` directly, or generate JSON Schema via [`zod-to-json-schema`](https://github.com/StefanTerdell/zod-to-json-schema) and use it from Python, Go, Rust, Excel, anywhere.
 - **Drizzle / Prisma / Kysely consumers** use `examples/drizzle-storage-reference.ts` for a suggested response-storage layer keyed to our field IDs.
-- **Forks stay honest** — every change must validate against the schema or CI fails.
+- **Forks stay honest** — the JSON is regenerated from TS via `bun run build:json`; CI fails if it drifts.
+
+### Source layout
+
+```
+src/
+  schema.ts          Zod schema (the type definitions)
+  fields/
+    profile.ts                 17 fields
+    security-practices.ts      24 fields
+    saas-technical.ts           5 fields
+    on-prem-technical.ts        4 fields
+    pro-services.ts             3 fields
+    managed-services.ts         3 fields
+    index.ts                   combines them into allFields
+  data.ts            wraps allFields in version + lastUpdated, validates
+data/
+  supplier-questionnaire.json  GENERATED — do not edit by hand
+scripts/
+  build-json.ts      regenerates the JSON from src/fields/*.ts
+  generate-bsi-mapping.py     regenerates the BSI inverse mapping
+```
+
+### Editing fields
+
+1. Edit the relevant `src/fields/<section>.ts` file (TypeScript, autocomplete works).
+2. Run `bun run build:json` to regenerate `data/supplier-questionnaire.json`.
+3. Run `bun run generate:bsi-mapping` if you changed `bsiBausteine` arrays.
+4. Run `bun run validate` and `bun run typecheck` to confirm everything is consistent.
+
+CI runs `bun run check:json-in-sync` and fails if the bundled JSON doesn't match what the TS would generate.
 
 ---
 
@@ -45,7 +75,7 @@ bun add @nisd2/nis2-supplier-questionnaire
 Or pin to a specific commit / tag without npm:
 
 ```bash
-npm install github:NISD2/nis2-supplier-questionnaire#v1.1.0
+npm install github:NISD2/nis2-supplier-questionnaire#v1.2.0
 ```
 
 ---
