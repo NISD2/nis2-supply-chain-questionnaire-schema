@@ -4,9 +4,16 @@ All notable changes to this repository are documented here. Format follows [Keep
 
 ## [Unreleased]
 
-### Changed
+## [3.0.0] — 2026-04-28
+
+### Changed (BREAKING)
 - **Repository and package renamed.** `nis2-supply-chain-questionnaire` → `nis2-supply-chain-questionnaire-schema`. The `-schema` suffix clarifies what this package actually is: a data + schema artefact, not an app or runtime. Old GitHub URL auto-redirects.
 - **Package name** is now `@nisd2/nis2-supply-chain-questionnaire-schema`. Code-level identifiers, exports, and field IDs are unchanged.
+- Schema: replaced `z.nativeEnum(...)` with explicit `z.union([z.literal(...), ...])` for `sectionSchema` and `fieldTypeSchema`. The inferred TypeScript types are identical (`"profile" | "security_practices" | …`), but the emit through `.d.ts` is more deterministic — some downstream typecheckers (Turbopack on Vercel in particular) struggle to follow `z.nativeEnum`'s narrow union through compiled type declarations and end up treating consumer-side properties as `unknown`.
+
+### Migration
+- Update consumers: `@nisd2/nis2-supply-chain-questionnaire` → `@nisd2/nis2-supply-chain-questionnaire-schema`.
+- Pin to `#v3.0.0` in `bun add github:...` install commands.
 
 ## [2.0.0] — 2026-04-28
 
