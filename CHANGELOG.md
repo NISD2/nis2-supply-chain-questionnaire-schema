@@ -4,6 +4,14 @@ All notable changes to this repository are documented here. Format follows [Keep
 
 ## [Unreleased]
 
+## [3.0.1] — 2026-04-28
+
+### Changed
+- **`dist/` is now committed to git.** Consumers no longer depend on the `prepare: tsc` lifecycle script running at install time, which was unreliable in some CI environments (notably Vercel) and caused consumer-side type resolution to break. The `prepare` script remains as a defence-in-depth.
+
+### Reverted
+- The literal-union schema refactor (briefly shipped in v3.0.0) is reverted. `z.nativeEnum(...)` is the right tool for `sectionSchema` / `fieldTypeSchema` — duplicating the enum values across a const + a literal union violated DRY. The original cause of the consumer-side type-resolution issue was the missing `dist/`, not `z.nativeEnum`'s `.d.ts` emit.
+
 ## [3.0.0] — 2026-04-28
 
 ### Changed (BREAKING)

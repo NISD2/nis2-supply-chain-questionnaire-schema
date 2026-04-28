@@ -11,19 +11,7 @@ export const SECTION = {
 
 export type SectionValue = typeof SECTION[keyof typeof SECTION];
 
-// Schemas use explicit literal unions instead of z.nativeEnum so the
-// inferred types survive .d.ts emission deterministically. Some
-// downstream typecheckers (Turbopack in particular) struggle to follow
-// z.nativeEnum's inferred narrow union through compiled type
-// declarations, leaving consumer-side properties typed as `unknown`.
-export const sectionSchema = z.union([
-  z.literal("profile"),
-  z.literal("security_practices"),
-  z.literal("saas_technical"),
-  z.literal("on_prem_technical"),
-  z.literal("pro_services"),
-  z.literal("managed_services"),
-]);
+export const sectionSchema = z.nativeEnum(SECTION);
 
 export const FIELD_TYPE = {
   STRING: "string",
@@ -39,17 +27,7 @@ export const FIELD_TYPE = {
 
 export type FieldTypeValue = typeof FIELD_TYPE[keyof typeof FIELD_TYPE];
 
-export const fieldTypeSchema = z.union([
-  z.literal("string"),
-  z.literal("text"),
-  z.literal("email"),
-  z.literal("phone"),
-  z.literal("url"),
-  z.literal("country"),
-  z.literal("boolean"),
-  z.literal("enum"),
-  z.literal("integer"),
-]);
+export const fieldTypeSchema = z.nativeEnum(FIELD_TYPE);
 
 const localisedString = z.object({
   en: z.string().min(1),

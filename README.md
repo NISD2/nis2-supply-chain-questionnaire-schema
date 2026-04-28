@@ -36,7 +36,7 @@ National-derivative frameworks (BSI IT-Grundschutz / Lieferketten-Checkliste in 
 This package is **not on the npm registry** — install directly from GitHub.
 
 ```bash
-bun add github:NISD2/nis2-supply-chain-questionnaire-schema#v3.0.0
+bun add github:NISD2/nis2-supply-chain-questionnaire-schema#v3.0.1
 # npm, pnpm, yarn — same syntax
 ```
 
