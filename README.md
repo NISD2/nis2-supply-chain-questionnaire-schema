@@ -97,17 +97,24 @@ CI runs `bun run check:json-in-sync` and fails if the bundled JSON doesn't match
 
 ## Install
 
-```bash
-npm install @nisd2/nis2-supplier-questionnaire
-# or
-bun add @nisd2/nis2-supplier-questionnaire
-```
-
-Or pin to a specific commit / tag without npm:
+This package is **not published to the npm registry** — it is installed directly from GitHub. That keeps the source of truth and the consumed artefact identical, with no separate release pipeline to manage.
 
 ```bash
+# bun (recommended)
+bun add github:NISD2/nis2-supplier-questionnaire#v1.3.0
+
+# npm
 npm install github:NISD2/nis2-supplier-questionnaire#v1.3.0
+
+# pnpm / yarn — same syntax
 ```
+
+Pin to any tag, branch, or commit SHA. To upgrade, change the tag and reinstall.
+
+If you only need the JSON or the JSON Schema (no TypeScript), download them directly:
+
+- [`data/supplier-questionnaire.json`](./data/supplier-questionnaire.json) — the questionnaire data
+- [`schema/supplier-questionnaire.schema.json`](./schema/supplier-questionnaire.schema.json) — JSON Schema for validation
 
 ---
 
