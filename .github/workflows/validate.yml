@@ -19,5 +19,7 @@ jobs:
         run: bun run typecheck
       - name: TS source validates against schema
         run: bun run validate
-      - name: JSON artefact matches TS source
+      - name: Tests
+        run: bun test
+      - name: JSON artefact + JSON Schema match TS source
         run: bun run check:json-in-sync

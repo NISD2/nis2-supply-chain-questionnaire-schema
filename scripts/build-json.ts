@@ -1,26 +1,42 @@
 /**
- * Regenerate data/supplier-questionnaire.json from src/fields/*.ts.
+ * Regenerate the published artefacts from src/fields/*.ts:
  *
- * The TypeScript field files are the source of truth. This script writes
- * the JSON artefact that ships to non-TS consumers.
+ *   data/supplier-questionnaire.json    — the questionnaire data, validated
+ *   schema/supplier-questionnaire.schema.json — JSON Schema for non-TS consumers
  *
- * Run after editing any src/fields/*.ts:
+ * The TypeScript field files in src/fields/ are the source of truth.
+ * Run after editing any of them:
+ *
  *   bun run build:json
  *
- * CI runs this script and fails if the JSON in the working tree doesn't
- * match the generated output (drift detection).
+ * CI runs this and fails if either artefact differs from what the TS would
+ * generate (drift detection).
  */
-import { writeFileSync } from "node:fs";
+import { mkdirSync, writeFileSync } from "node:fs";
 import { dirname, join } from "node:path";
 import { fileURLToPath } from "node:url";
+import { zodToJsonSchema } from "zod-to-json-schema";
 import { supplierQuestionnaire } from "../src/data";
+import { supplierQuestionnaireSchema } from "../src/schema";
 
 const here = dirname(fileURLToPath(import.meta.url));
-const outPath = join(here, "..", "data", "supplier-questionnaire.json");
+const root = join(here, "..");
 
-const out = JSON.stringify(supplierQuestionnaire, null, 2) + "\n";
-writeFileSync(outPath, out);
+const dataPath = join(root, "data", "supplier-questionnaire.json");
+const dataOut = JSON.stringify(supplierQuestionnaire, null, 2) + "\n";
+writeFileSync(dataPath, dataOut);
+
+const schemaDir = join(root, "schema");
+mkdirSync(schemaDir, { recursive: true });
+const schemaPath = join(schemaDir, "supplier-questionnaire.schema.json");
+const jsonSchema = zodToJsonSchema(supplierQuestionnaireSchema, {
+  name: "SupplierQuestionnaire",
+  $refStrategy: "none",
+});
+const schemaOut = JSON.stringify(jsonSchema, null, 2) + "\n";
+writeFileSync(schemaPath, schemaOut);
 
 console.log(
-  `OK: wrote ${outPath} (${supplierQuestionnaire.fields.length} fields, v${supplierQuestionnaire.version})`,
+  `OK: ${dataPath} (${supplierQuestionnaire.fields.length} fields, v${supplierQuestionnaire.version})`,
 );
+console.log(`OK: ${schemaPath}`);

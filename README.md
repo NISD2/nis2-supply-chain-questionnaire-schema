@@ -1,12 +1,43 @@
 # NIS2 Supplier Questionnaire
 
 [![License: MIT + CC BY 4.0](https://img.shields.io/badge/license-MIT%20%2B%20CC%20BY%204.0-blue.svg)](./LICENSE)
+[![CI](https://github.com/NISD2/nis2-supplier-questionnaire/actions/workflows/validate.yml/badge.svg)](https://github.com/NISD2/nis2-supplier-questionnaire/actions/workflows/validate.yml)
 
-**The questions a NIS2-regulated customer needs to ask their suppliers — as a typed Zod schema.** 56 fields across 6 sections, each anchored to a specific source (NIS2 Art. 21(2), CIR 2024/2690, ENISA TIG, BSI IT-Grundschutz, GDPR Art. 28). Every field is also tagged to the relevant Bausteine of the [BSI NIS-2 Lieferketten-Checkliste v1.0 (5 June 2025)](https://www.bsi.bund.de/SharedDocs/Downloads/DE/BSI/NIS-2/nis-2-lieferkette_grundschutz-checkliste.pdf).
+**The questions a NIS2-regulated customer needs to ask their suppliers — as a typed Zod schema.** 56 fields across 6 sections, each anchored to a primary source (NIS2 Art. 21(2), CIR 2024/2690, ENISA TIG, BSI IT-Grundschutz, GDPR Art. 28). Every field is also tagged to the relevant Bausteine of the [BSI NIS-2 Lieferketten-Checkliste v1.0 (5 June 2025)](https://www.bsi.bund.de/SharedDocs/Downloads/DE/BSI/NIS-2/nis-2-lieferkette_grundschutz-checkliste.pdf).
 
 Maintained by [Kardashev Catalyst UG](https://nisd2.eu) — operator of [nisd2.eu](https://nisd2.eu) — and the same questionnaire that powers the supplier portal at nisd2.eu.
 
-Source of truth lives in [`src/fields/<section>.ts`](./src/fields/) — typed, with full TypeScript autocomplete on enums, citations, and Baustein IDs. The bundled JSON at [`data/supplier-questionnaire.json`](./data/supplier-questionnaire.json) is generated from these files for non-TS consumers.
+## Contents
+
+- [Quickstart](#quickstart) — render a form in 30 seconds
+- [Why this exists](#why-this-exists)
+- [Why a schema, not just a JSON file](#why-a-schema-not-just-a-json-file)
+- [Install](#install)
+- [Usage](#usage)
+- [Sections](#sections)
+- [BSI NIS-2 Lieferketten-Checkliste alignment](#bsi-nis-2-lieferketten-checkliste-alignment)
+- [Field shape](#field-shape)
+- [What this is NOT](#what-this-is-not)
+- [Contributing](./CONTRIBUTING.md) · [Security](./SECURITY.md) · [Changelog](./CHANGELOG.md)
+
+## Quickstart
+
+```bash
+bun add github:NISD2/nis2-supplier-questionnaire#v1.3.0
+```
+
+```ts
+import {
+  supplierQuestionnaire,
+  groupBySection,
+} from "@nisd2/nis2-supplier-questionnaire";
+
+for (const [section, fields] of groupBySection(supplierQuestionnaire)) {
+  console.log(`${section}: ${fields.length} fields`);
+}
+```
+
+That's it. You now have 56 NIS2-anchored supplier-due-diligence fields with full TypeScript types, two locales, and BSI Baustein citations.
 
 ---
 
@@ -28,9 +59,9 @@ A single shared, openly maintained, legally-anchored questionnaire is more valua
 A JSON-only release is a dead artefact: nobody can validate it without re-deriving the rules, and forks drift silently. The TypeScript field files + Zod schema are alive:
 
 - **TypeScript consumers** import the data directly and get full type safety, autocomplete on enums, and inline IDE hints.
-- **Non-TS consumers** read the bundled `data/supplier-questionnaire.json` directly, or generate JSON Schema via [`zod-to-json-schema`](https://github.com/StefanTerdell/zod-to-json-schema) and use it from Python, Go, Rust, Excel, anywhere.
+- **Non-TS consumers** read the bundled `data/supplier-questionnaire.json` directly, or use the published JSON Schema at [`schema/supplier-questionnaire.schema.json`](./schema/supplier-questionnaire.schema.json) from Python, Go, Rust, Excel, anywhere.
 - **Drizzle / Prisma / Kysely consumers** use `examples/drizzle-storage-reference.ts` for a suggested response-storage layer keyed to our field IDs.
-- **Forks stay honest** — the JSON is regenerated from TS via `bun run build:json`; CI fails if it drifts.
+- **Forks stay honest** — the JSON is regenerated from TS via `bun run build:json`; CI fails if either the JSON data or the JSON Schema drifts.
 
 ### Source layout
 
@@ -75,7 +106,7 @@ bun add @nisd2/nis2-supplier-questionnaire
 Or pin to a specific commit / tag without npm:
 
 ```bash
-npm install github:NISD2/nis2-supplier-questionnaire#v1.2.0
+npm install github:NISD2/nis2-supplier-questionnaire#v1.3.0
 ```
 
 ---
